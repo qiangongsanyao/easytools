@@ -9,7 +9,8 @@
         </Console>
         <File name="FileAppender" fileName="log/warn.log" append="false">  
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />  
-        </File>  
+        </File>
+        <!-- 
         <RollingRandomAccessFile name="RollingRandomAccessFile" fileName="log/info.log" append="true" 
         	filePattern="log/info-%i.log">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
@@ -19,6 +20,7 @@
             </Policies>
             <DefaultRolloverStrategy max="20"/>
         </RollingRandomAccessFile>
+         -->
     </Appenders>  
 
     <Loggers>  
@@ -27,7 +29,6 @@
         </Logger>
         <Root level="info">  
             <AppenderRef ref="Console" />  
-            <AppenderRef ref="RollingRandomAccessFile" />  
         </Root>    
     </Loggers>  
 </Configuration>
