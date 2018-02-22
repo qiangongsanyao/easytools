@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	http://blog.csdn.net/vbirdbest/article/details/71751835 
+-->
+<Configuration status="WARN">  
+    <Appenders>  
+        <Console name="Console" target="SYSTEM_OUT">  
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />  
+        </Console>
+        <File name="FileAppender" fileName="log/warn.log" append="false">  
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />  
+        </File>  
+        <RollingRandomAccessFile name="RollingRandomAccessFile" fileName="log/info.log" append="true" 
+        	filePattern="log/info-%i.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingRandomAccessFile>
+    </Appenders>  
+
+    <Loggers>  
+        <Logger name="easytools" level="Warn" additivity="true">  
+            <AppenderRef ref="FileAppender" />  
+        </Logger>
+        <Root level="info">  
+            <AppenderRef ref="Console" />  
+            <AppenderRef ref="RollingRandomAccessFile" />  
+        </Root>    
+    </Loggers>  
+</Configuration>
