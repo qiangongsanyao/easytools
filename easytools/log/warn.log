@@ -1,0 +1,3 @@
+10:12:24.898 [main] ERROR easytools.ch.App - error
+10:12:24.899 [main] WARN  easytools.ch.App - warn
+10:12:24.899 [main] FATAL easytools.ch.App - fatal
