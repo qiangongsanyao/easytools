@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  * 
  * @author CH
- * @version 1.01
+ * @version 1.02
  */
 @Controller
 @EnableAutoConfiguration
